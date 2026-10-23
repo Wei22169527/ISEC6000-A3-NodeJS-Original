@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+    commands:
+      - npm install --legacy-peer-deps --no-audit --no-fund --package-lock=false
+
+  build:
+    commands:
+      - npm test -- --runInBand
